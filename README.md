@@ -1,29 +1,5 @@
-# Disaster Response Pipeline Project
-
-### Instructions:
-1. Run the following commands in the project's root directory to set up your database and model.
-
-    - To run ETL pipeline that cleans data and stores in database
-        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
-    - To run ML pipeline that trains classifier and saves
-        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
-
-2. Run the following command in the app's directory to run your web app.
-    `python run.py`
-
-3. Go to http://0.0.0.0:3001/
-
-
-
-
-
-
-
-
-
-
-
 # DSND-P2
+## Disaster Response Pipeline Project
 This project aims to analyze disaster data from [appen](https://appen.com/) to build a model for an API that classifies disaster messages.
 ### Project Components:
 There are three components you'll need to complete for this project.
@@ -31,6 +7,7 @@ There are three components you'll need to complete for this project.
 2. [ML Pipeline](#ML_Pipeline)
 3. [Flask Web App](#Flask_Web_App)
 4. [Github and Code Quality](#Github_and_Code_Quality)
+5. [Instructions](#Instructions)
 
 ## ETL Pipeline <a name="ETL_Pipeline"></a>
 In a Python script, `process_data.py`, i did a data cleaning pipeline that:
@@ -57,6 +34,18 @@ The project graded based on the following:
 - Strong documentation
 - Clean and modular code
 
+### Instructions:<a name="Instructions"></a>
+1. Run the following commands in the project's root directory to set up your database and model.
+
+    - To run ETL pipeline that cleans data and stores in database
+        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+    - To run ML pipeline that trains classifier and saves
+        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+
+2. Run the following command in the app's directory to run your web app.
+    `python run.py`
+
+3. Go to http://0.0.0.0:3001/
 
 
 
