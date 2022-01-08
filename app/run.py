@@ -37,7 +37,13 @@ model = joblib.load("../models/classifier.pkl")
 @app.route('/')
 @app.route('/index')
 def index():
+    """
+    The function will make graphs 
     
+    Returns:
+    Render web page with plotly graphs
+    """
+
     # extract data needed for visuals
     # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
@@ -87,6 +93,12 @@ def index():
 # web page that handles user query and displays model results
 @app.route('/go')
 def go():
+    """
+    The function will save user input in query and then use model to predict classification for query
+    
+    Returns:
+    Render the go.html Please see that file
+    """
     # save user input in query
     query = request.args.get('query', '') 
 
