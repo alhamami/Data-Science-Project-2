@@ -30,9 +30,14 @@ def load_data(messages_filepath, categories_filepath):
     """
 
     file1 = pd.read_csv(categories_filepath)
+	
+	
+	
+    file1 = file1['categories'].str.split(pat=';', expand=True)
+    gets = file1.iloc[0, :]
+    col = gets.map(lambda x: x.split('-')[0])
+    file1.columns = col
 
-    cates = (file1['categories'].str.split(pat=';', expand=True)).iloc[0, :]
-    file1.columns =  cates.map(lambda x: x.split('-')[0])
 
 
     for x in file1:
@@ -78,9 +83,9 @@ def main():
     The function will grabs the required variables from the command line,
     stacks the above functions in the right order and generates a clean .db file.
     """
-    if len(sys.argv) == 4:
+    if len(sys.argv) == 5:
 
-        messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
+        messages_filepath, categories_filepath, database_filepath = sys.argv[2:]
 
         print('Loading data...\n    MESSAGES: {}\n    CATEGORIES: {}'
               .format(messages_filepath, categories_filepath))
@@ -95,6 +100,7 @@ def main():
         print('Cleaned data saved to database!')
     
     else:
+        print(len(sys.argv))
         print('Please provide the filepaths of the messages and categories '\
               'datasets as the first and second argument respectively, as '\
               'well as the filepath of the database to save the cleaned data '\
